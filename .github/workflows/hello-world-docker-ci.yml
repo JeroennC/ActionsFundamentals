@@ -1,0 +1,14 @@
+name: "Run action"
+
+on:
+  push:
+    branches: [main]
+    paths: hello-world-docker-action/action.yml
+  workflow_dispatch:
+    
+jobs:
+  action:
+    steps:
+      - uses: actions/checkout@v3.3.0
+      - uses: ./hello-world-docker-action
+    
