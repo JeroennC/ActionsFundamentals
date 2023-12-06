@@ -12,4 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3.3.0
       - uses: ./hello-world-docker-action
-    
+        id: my-action
+      - name: Output time set in the container
+        run: echo "The time was ${{ steps.my-action.outputs.time }} when the action said hello"
